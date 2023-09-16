@@ -1,11 +1,14 @@
-import React from 'react'
-import Starter from './components/conditional-rendering/multiple-returns-fetch-data'
+import React from 'react';
+// import Navbar from './components/project_structure/navbar'
+// import {Home,About} from './components/project_structure/pages'
 
+import Form from './components/forms_in_react/01-controlled-inputs';
 function App() {
   return (
-    <div>
-      <Starter/>
+    <div >
+      <Form/>
     </div>
+
   )
 }
 

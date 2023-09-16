@@ -7,12 +7,17 @@ const MultipleReturnsFetchData=()=>{
     const [user,setUser]=useState(null);
 
 
-
+//********************ORDER MATTERS IN JAVASCRIPT********* */
     useEffect(()=>{
         const fetchUser=async()=>{
             try{
                 const resp=await fetch(url);
-                const user=await resp.json();
+                if(!resp.ok){
+                    setIsError(true);
+                    setIsLoading(false);
+                }
+                const newresp=await resp.json();
+                setUser(newresp)
                 console.log(user)
             }
             catch(error){
@@ -31,6 +36,11 @@ const MultipleReturnsFetchData=()=>{
     if(isError){
         return <h2>some error occured</h2>
     }
-    return (<h1>fetch data</h1>)
+    //destructuring later because in beginning it is null
+    //and till the user is set to some value 
+    //isLoading condition will handle the control  
+    const {login}=user;
+
+    return (<h1>{login}</h1>)
 }
 export default MultipleReturnsFetchData;
