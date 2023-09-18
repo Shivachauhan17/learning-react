@@ -1,7 +1,11 @@
-import {useState,useEffect} from 'react'
+import {useState,useEffect,useContext} from 'react'
 import UserContainer from './UserContainer'
+// import { NavbarContext } from './Navbar';
+import {useAppContext} from './Navbar';
 
-function NavLinks({user,logout}) {
+
+function NavLinks() {
+    const {user,logout}=useAppContext();
     return(
         <div>
   <ul>
