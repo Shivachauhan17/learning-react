@@ -9,6 +9,7 @@ const FetchData=()=>{
     useEffect(()=>{
         const fetchData=async()=>{
             try{
+                console.log('fetched')
                 const response=await fetch(url);
                 const users=await response.json();
                 setUsers(users);

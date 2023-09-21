@@ -26,10 +26,11 @@ const RandomComponent=()=>{
         // };
 
         const someFunc=()=>{
-
+            console.log("running again")
         }  
         window.addEventListener('scroll',someFunc);
     },[]);
+    console.log('outside')
     return ()=>{window.removeEventListener('scroll')};  
 }
 

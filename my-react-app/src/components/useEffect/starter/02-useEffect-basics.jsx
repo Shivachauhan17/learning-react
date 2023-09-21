@@ -1,4 +1,4 @@
-import { useState,useEffec } from 'react';
+import { useState,useEffect } from 'react';
 
 const UseEffectBasics = () => {
   const [value, setValue] = useState(0);
